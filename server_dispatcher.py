@@ -19,6 +19,8 @@ def on_request(ch, method, props, body):
     service = msg.get("service")
     payload = msg.get("payload", {})
 
+    print(f"[DISPATCHER] Recebido serviço='{service}' com payload={payload}")
+
     if service not in SERVICES:
         response = {"erro": "Serviço inválido"}
     else:
@@ -47,6 +49,8 @@ def forward_to_service(queue, payload):
 
     callback_queue = service_ch.queue_declare(queue='', exclusive=True).method.queue
     corr_id = str(uuid.uuid4())
+
+    print(f"[DISPATCHER] Encaminhando para fila='{queue}' com payload={payload}")
 
     service_ch.basic_publish( # Implementação de comunicação assíncrona
         exchange='',

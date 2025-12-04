@@ -9,6 +9,7 @@ SERVICE_QUEUE = "service_media"
 channel.queue_declare(queue=SERVICE_QUEUE)
 
 def process_request(data):
+    print("Requisição recebida")
     valores = data.get("valores", [])
     if not valores:
         return {"resultado": 0}

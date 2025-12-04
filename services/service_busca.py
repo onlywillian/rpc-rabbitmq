@@ -11,6 +11,7 @@ channel.queue_declare(queue=SERVICE_QUEUE)
 MOCK_DB = ["banana", "laranja", "uva", "abacaxi", "morango"]
 
 def process_request(data):
+    print("Requisição recebida")
     termo = data.get("termo", "")
     resultados = [item for item in MOCK_DB if termo.lower() in item.lower()]
     return {"resultado": resultados}

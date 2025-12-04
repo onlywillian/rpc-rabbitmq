@@ -9,6 +9,7 @@ SERVICE_QUEUE = "service_soma"
 channel.queue_declare(queue=SERVICE_QUEUE)
 
 def process_request(data):
+    print("Requisição recebida")
     a = data.get("a", 0)
     b = data.get("b", 0)
     return {"resultado": a + b}
