@@ -1,9 +1,8 @@
 RPC com RabbitMQ – Sistema de Processamento Assíncrono
 
 Este projeto demonstra um sistema completo de comunicação assíncrona, utilizando RabbitMQ para implementar um mecanismo de RPC (Remote Procedure Call) entre um cliente e um serviço de processamento.
-O objetivo é evidenciar:
 
-📂 Estrutura do Projeto
+Estrutura do Projeto
 
 ├── client/  
 │ └── rpc_client.py  
