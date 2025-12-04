@@ -27,7 +27,7 @@ Requisitos:
 
 ```
 python3 -m venv .venv
-.venv/bin/activate
+.venv/Scripts/activate
 pip install pika
 ```
 
@@ -43,9 +43,9 @@ docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:4-manag
 Iniciar o(s) serviço(s)
 
 ```
-python -m services.service_soma
 python -m services.service_soma.py
-python -m services.service_soma.py
+python -m services.service_media.py
+python -m services.service_busca.py
 ```
 
 O serviço ficará aguardando requisições:
